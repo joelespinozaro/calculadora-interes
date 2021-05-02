@@ -32,3 +32,29 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### next js ###
+# dependencies
+node_modules/
+
+# next.js
+!**/src/main/frontend/.next/
+!**/src/main/frontend/out/
+
+# misc
+!**/src/main/frontend/.DS_Store
+!**/src/main/frontend/*.pem
+
+# debug
+!**/src/main/frontend/npm-debug.log*
+!**/src/main/frontend/yarn-debug.log*
+!**/src/main/frontend/yarn-error.log*
+
+# local env files
+!**/src/main/frontend/.env.local
+!**/src/main/frontend/.env.development.local
+!**/src/main/frontend/.env.test.local
+!**/src/main/frontend/.env.production.local
+
+# vercel
+!**/src/main/frontend/.vercel
