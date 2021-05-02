@@ -23,6 +23,14 @@ public class ServicioFinanciero {
 
     private Integer periodo;
 
+    @ManyToOne
+    @JoinColumn(name = "id_recomendacion", insertable = false, updatable = false)
+    private Recomendacion recomendacion;
+
+    @ManyToOne
+    @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
+    private Cliente cliente;
+
     public Recomendacion getRecomendacion() {
         return recomendacion;
     }
@@ -41,13 +49,7 @@ public class ServicioFinanciero {
 
     private Double interes;
 
-    @ManyToOne
-    @JoinColumn(name = "id_recomendacion", insertable = false, updatable = false)
-    private Recomendacion recomendacion;
 
-    @ManyToOne
-    @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
-    private Cliente cliente;
 
     public Integer getIdServicioFinanciero() {
         return idServicioFinanciero;
