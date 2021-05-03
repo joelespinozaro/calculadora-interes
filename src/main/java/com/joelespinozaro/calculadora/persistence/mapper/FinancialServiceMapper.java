@@ -1,15 +1,15 @@
 package com.joelespinozaro.calculadora.persistence.mapper;
 
-import com.joelespinozaro.calculadora.domain.Banking;
 import com.joelespinozaro.calculadora.domain.FinancialService;
-import com.joelespinozaro.calculadora.persistence.entity.EntidadBancaria;
 import com.joelespinozaro.calculadora.persistence.entity.ServicioFinanciero;
 import org.mapstruct.InheritInverseConfiguration;
+import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
 import java.util.List;
 
+@Mapper(componentModel = "spring",uses = {ClientMapper.class, RecommendationMapper.class})
 public interface FinancialServiceMapper {
         @Mappings({
                 @Mapping(source = "idServicioFinanciero", target="financialServiceId"),

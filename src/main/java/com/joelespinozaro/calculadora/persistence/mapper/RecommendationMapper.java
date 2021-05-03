@@ -5,11 +5,13 @@ import com.joelespinozaro.calculadora.domain.Recommendation;
 import com.joelespinozaro.calculadora.persistence.entity.EntidadBancaria;
 import com.joelespinozaro.calculadora.persistence.entity.Recomendacion;
 import org.mapstruct.InheritInverseConfiguration;
+import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
 import java.util.List;
 
+@Mapper(componentModel = "spring",uses = {BankingMapper.class, AdvisorMapper.class})
 public interface RecommendationMapper {
         @Mappings({
                 @Mapping(source = "idRecomendacion", target="recommendationId"),
@@ -23,6 +25,6 @@ public interface RecommendationMapper {
         List<Recommendation> toRecommendations(List<Recomendacion> recomendaciones);
 
         @InheritInverseConfiguration
-        @Mapping(target = "recomendaciones", ignore = true)
-        EntidadBancaria toRecomendacion(Recommendation recommendation);
+        //@Mapping(target = "recomendaciones", ignore = true)
+        Recomendacion toRecomendacion(Recommendation recommendation);
 }

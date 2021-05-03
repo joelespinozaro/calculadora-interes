@@ -25,6 +25,21 @@ public class Recomendacion {
     @JoinColumn(name = "id_entidad_bancaria", insertable = false, updatable = false)
     private EntidadBancaria entidadBancaria;
 
+    public AsesorFinanciero getAsesorFinanciero() {
+        return asesorFinanciero;
+    }
+
+    public void setAsesorFinanciero(AsesorFinanciero asesorFinanciero) {
+        this.asesorFinanciero = asesorFinanciero;
+    }
+
+    public EntidadBancaria getEntidadBancaria() {
+        return entidadBancaria;
+    }
+
+    public void setEntidadBancaria(EntidadBancaria entidadBancaria) {
+        this.entidadBancaria = entidadBancaria;
+    }
 
     public Integer getIdRecomendacion() {
         return idRecomendacion;

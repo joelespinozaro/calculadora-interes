@@ -3,9 +3,7 @@ package com.joelespinozaro.calculadora.web.controller;
 import com.joelespinozaro.calculadora.domain.service.BankingService;
 import com.joelespinozaro.calculadora.domain.Banking;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -21,15 +19,17 @@ public class BankingController {
         return bankingService.getAll();
     }
 
-    public Optional<Banking> getBanking(int bankingId) {
+    @GetMapping("/{id}")
+    public Optional<Banking> getBanking(@PathVariable("id") int bankingId) {
         return bankingService.getBanking(bankingId);
     }
 
-    public Banking save(Banking banking) {
+    @PostMapping("/save")
+    public Banking save(@RequestBody Banking banking) {
         return bankingService.save(banking);
     }
-
-    public boolean delete(int bankingId) {
+    @DeleteMapping("/delete/{id}")
+    public boolean delete(@PathVariable("id") int bankingId) {
         return  bankingService.delete(bankingId);
     }
 }

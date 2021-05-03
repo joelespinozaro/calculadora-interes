@@ -7,6 +7,8 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
+import java.util.List;
+
 @Mapper(componentModel = "spring")
 public interface BankingTypeMapper {
     @Mappings({
@@ -14,6 +16,7 @@ public interface BankingTypeMapper {
             @Mapping(source = "descripcion", target = "description")
     })
     BankingType toBankingType(TipoEntidadBancaria tipoEntidadBancaria);
+    List<BankingType> toBankingTypes(List<TipoEntidadBancaria> tipoEntidadesBancarias);
 
     @InheritInverseConfiguration
     @Mapping(target = "entidadesBancarias", ignore = true)

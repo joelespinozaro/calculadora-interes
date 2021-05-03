@@ -1,28 +1,45 @@
 package com.joelespinozaro.calculadora.persistence;
 
+import com.joelespinozaro.calculadora.domain.Client;
+import com.joelespinozaro.calculadora.domain.repository.ClientRepository;
 import com.joelespinozaro.calculadora.persistence.crud.ClienteCrudRepository;
 import com.joelespinozaro.calculadora.persistence.entity.Cliente;
+import com.joelespinozaro.calculadora.persistence.mapper.ClientMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
-public class ClienteRepository {
+public class ClienteRepository implements ClientRepository {
+    @Autowired
     private ClienteCrudRepository clienteCrudRepository;
 
-    public List<Cliente> getAll() {
-        return (List<Cliente>) clienteCrudRepository.findAll();
+    @Autowired
+    private ClientMapper mapper;
+
+    @Override
+    public List<Client> getAll() {
+        List<Cliente> clientes = (List<Cliente>) clienteCrudRepository.findAll();
+        return mapper.toClients(clientes);
     }
 
-    public List<Cliente> getByDocumento(String nroDocumento){
-        return clienteCrudRepository.findByNroDocumentoOrderByNombresAsc(nroDocumento);
+    @Override
+    public Optional<Client> getClient(int clientId) {
+        return clienteCrudRepository.findById(clientId).map(cliente -> mapper.toClient(cliente));
     }
 
-    public Cliente save(Cliente cliente) {
-        return clienteCrudRepository.save(cliente);
+    @Override
+    public Client save(Client client) {
+        Cliente cliente = mapper.toCliente(client);
+        return mapper.toClient(clienteCrudRepository.save(cliente));
     }
 
-    public void delete(int idCliente) {
-        clienteCrudRepository.deleteById(idCliente);
+    @Override
+    public void delete(int clientId) {
+        clienteCrudRepository.deleteById(clientId);
     }
+
+
 }
