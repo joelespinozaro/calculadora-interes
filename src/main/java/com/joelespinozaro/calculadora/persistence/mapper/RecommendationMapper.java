@@ -1,8 +1,6 @@
 package com.joelespinozaro.calculadora.persistence.mapper;
 
-import com.joelespinozaro.calculadora.domain.Banking;
 import com.joelespinozaro.calculadora.domain.Recommendation;
-import com.joelespinozaro.calculadora.persistence.entity.EntidadBancaria;
 import com.joelespinozaro.calculadora.persistence.entity.Recomendacion;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;

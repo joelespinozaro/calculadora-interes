@@ -1,5 +1,7 @@
 package com.joelespinozaro.calculadora.persistence.entity;
 
+import org.hibernate.annotations.Formula;
+
 import javax.persistence.*;
 
 @Entity
@@ -22,6 +24,9 @@ public class ServicioFinanciero {
     private Double capital;
 
     private Integer periodo;
+
+    @Formula(value = "CASE WHEN interes=1 THEN capital*power((1 + tasa/100),periodo) WHEN interes=2 THEN capital*(1 + tasa/100) END")
+    private Double capitalFinal;
 
     @ManyToOne
     @JoinColumn(name = "id_recomendacion", insertable = false, updatable = false)
@@ -48,7 +53,6 @@ public class ServicioFinanciero {
     }
 
     private Double interes;
-
 
 
     public Integer getIdServicioFinanciero() {
@@ -105,5 +109,9 @@ public class ServicioFinanciero {
 
     public void setInteres(Double interes) {
         this.interes = interes;
+    }
+
+    public Double getcapitalFinal() {
+        return capitalFinal;
     }
 }

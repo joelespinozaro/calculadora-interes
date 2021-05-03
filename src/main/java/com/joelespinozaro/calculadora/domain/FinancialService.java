@@ -9,6 +9,7 @@ public class FinancialService {
     private int period;
     private Recommendation recommendation;
     private Client client;
+    private Double capitalFinal;
 
     public int getFinancialServiceId() {
         return financialServiceId;
@@ -72,5 +73,13 @@ public class FinancialService {
 
     public void setClient(Client client) {
         this.client = client;
+    }
+
+    public void setCapitalFinal(Double capitalFinal) {
+        this.capitalFinal = capitalFinal;
+    }
+
+    public Double getCapitalFinal() {
+        return capitalFinal;
     }
 }

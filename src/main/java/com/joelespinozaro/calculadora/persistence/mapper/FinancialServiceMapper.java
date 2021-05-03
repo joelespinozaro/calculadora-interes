@@ -19,7 +19,8 @@ public interface FinancialServiceMapper {
                 @Mapping(source = "capital", target="capital"),
                 @Mapping(source = "periodo", target="period"),
                 @Mapping(source = "recomendacion", target="recommendation"),
-                @Mapping(source = "cliente", target="client")
+                @Mapping(source = "cliente", target="client"),
+                @Mapping(source = "capitalFinal", target="capitalFinal")
 
         })
         FinancialService toFinancialService(ServicioFinanciero servicioFinanciero);
