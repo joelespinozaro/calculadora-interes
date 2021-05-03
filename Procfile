@@ -1,1 +1,1 @@
-web: java -jar -D spring.profiles.active=pdn build/libs/calculadora-interes-0.0.1-SNAPSHOT
+web: java -jar -D spring.profiles.active=pdn build/libs/calculadora-interes-0.0.1-SNAPSHOT.jar
