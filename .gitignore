@@ -38,7 +38,7 @@ out/
 node_modules/
 
 # next.js
-!**/src/main/frontend/.next/
+.next/
 !**/src/main/frontend/out/
 
 # misc
