@@ -1,8 +1,9 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useRef, useState } from "react";
+import FormLogin from "./FormLogin";
 
-export default function Login() {
-  const [open, setOpen] = useState(true);
+export default function Login({ setUser }) {
+  const [open, setOpen] = useState(false);
   const cancelButtonRef = useRef();
 
   function closeModal() {
@@ -67,30 +68,7 @@ export default function Login() {
                 >
                   Inicio de Sesión
                 </Dialog.Title>
-                <div className="mt-2">
-                  <dt className="text-sm font-medium text-gray-500"></dt>
-                  <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    <input
-                      id="dni"
-                      name="dni"
-                      type="text"
-                      autoComplete="off"
-                      className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-blue-500 focus:z-10 sm:text-sm"
-                      placeholder="Ingresar correo eletrónico"
-                      required
-                    />
-                  </dd>
-                </div>
-
-                <div className="mt-4">
-                  <button
-                    type="button"
-                    className="inline-flex justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
-                    onClick={closeModal}
-                  >
-                    Ingresar
-                  </button>
-                </div>
+                <FormLogin onClick={closeModal} setUser={setUser} />
               </div>
             </Transition.Child>
           </div>

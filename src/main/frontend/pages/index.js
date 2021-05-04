@@ -1,11 +1,5 @@
-import FormularioCalculadora from "../components/FormularioCalculadora";
-import Navbar from "../components/Navbar";
+import HomeView from "../components/HomeView";
 
 export default function Home() {
-  return (
-    <>
-      <Navbar />
-      <FormularioCalculadora />
-    </>
-  );
+  return <HomeView />;
 }

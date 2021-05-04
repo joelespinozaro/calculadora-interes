@@ -10,6 +10,15 @@ public class FinancialService {
     private Recommendation recommendation;
     private Client client;
     private Double capitalFinal;
+    private int typeRate;
+
+    public int getTypeRate() {
+        return typeRate;
+    }
+
+    public void setTypeRate(int typeRate) {
+        this.typeRate = typeRate;
+    }
 
     public int getFinancialServiceId() {
         return financialServiceId;

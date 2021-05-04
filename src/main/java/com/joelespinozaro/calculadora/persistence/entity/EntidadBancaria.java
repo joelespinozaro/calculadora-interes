@@ -25,24 +25,12 @@ public class EntidadBancaria {
     @JoinColumn(name = "id_tipo_entidad_bancaria", insertable = false, updatable = false)
     private TipoEntidadBancaria tipoEntidadBancaria;
 
-
-    @OneToMany(mappedBy = "entidadBancaria")
-    private List<Recomendacion> recomendaciones;
-
     public TipoEntidadBancaria getTipoEntidadBancaria() {
         return tipoEntidadBancaria;
     }
 
     public void setTipoEntidadBancaria(TipoEntidadBancaria tipoEntidadBancaria) {
         this.tipoEntidadBancaria = tipoEntidadBancaria;
-    }
-
-    public List<Recomendacion> getRecomendaciones() {
-        return recomendaciones;
-    }
-
-    public void setRecomendaciones(List<Recomendacion> recomendaciones) {
-        this.recomendaciones = recomendaciones;
     }
 
     public Integer getIdEntidadBancaria() {

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function FormRegister({ onClick, setUser }) {
+export default function FormLogin({ onClick, setUser }) {
   const [errorMsg, setErrorMsg] = useState("");
   const onSubmit = (e) => {
     e.preventDefault();
@@ -28,43 +28,13 @@ export default function FormRegister({ onClick, setUser }) {
     <form className="my-5" onSubmit={onSubmit}>
       <div className="my-4">
         <dt className="text-sm font-medium text-gray-500">
-          Nombres y Apellidos
+          Correo Electrónico
         </dt>
         <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
           <input
             id="nombre"
             name="nombre"
             type="text"
-            autoComplete="off"
-            className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-blue-500 focus:z-10 sm:text-sm"
-            placeholder="Ingresar nombres y apellidos"
-            required
-          />
-        </dd>
-      </div>
-      <div className="my-4">
-        <dt className="text-sm font-medium text-gray-500">DNI o RUC</dt>
-        <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-          <input
-            id="dni"
-            name="dni"
-            type="text"
-            autoComplete="off"
-            className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-blue-500 focus:z-10 sm:text-sm"
-            placeholder="Ingresar DNI o RUC"
-            required
-          />
-        </dd>
-      </div>{" "}
-      <div className="my-4">
-        <dt className="text-sm font-medium text-gray-500">
-          Correo Electrónico
-        </dt>
-        <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-          <input
-            id="email"
-            name="email"
-            type="email"
             autoComplete="off"
             className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-blue-500 focus:z-10 sm:text-sm"
             placeholder="Ingresar correo electrónico"

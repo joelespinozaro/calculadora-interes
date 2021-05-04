@@ -2,8 +2,8 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useRef, useEffect, useState } from "react";
 import FormRegister from "./FormRegister";
 
-export default function Register() {
-  const [open, setOpen] = useState(true);
+export default function Register({ setUser }) {
+  const [open, setOpen] = useState(false);
   const cancelButtonRef = useRef();
 
   function closeModal() {
@@ -68,7 +68,7 @@ export default function Register() {
                 >
                   Registro de usuario
                 </Dialog.Title>
-                <FormRegister onClick={closeModal} />
+                <FormRegister onClick={closeModal} setUser={setUser} />
               </div>
             </Transition.Child>
           </div>

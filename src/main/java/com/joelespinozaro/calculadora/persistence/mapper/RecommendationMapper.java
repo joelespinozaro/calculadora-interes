@@ -9,7 +9,7 @@ import org.mapstruct.Mappings;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring",uses = {BankingMapper.class, AdvisorMapper.class})
+@Mapper(componentModel = "spring",uses = {AdvisorMapper.class, BankingMapper.class})
 public interface RecommendationMapper {
         @Mappings({
                 @Mapping(source = "idRecomendacion", target="recommendationId"),

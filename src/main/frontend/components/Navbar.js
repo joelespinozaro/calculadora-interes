@@ -1,7 +1,7 @@
 import Login from "./Login";
 import Register from "./Register";
 
-export default function Navbar() {
+export default function Navbar({ user, setUser }) {
   return (
     <header className="bg-white py-3">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,8 +17,17 @@ export default function Navbar() {
             </span>
           </div>
           <div>
-            <Register />
-            <Login />
+            {typeof user === "undefined" ? (
+              <>
+                <Register setUser={setUser} />
+                <Login setUser={setUser} />
+              </>
+            ) : (
+              <span>
+                Hola,
+                <strong> {user.client}</strong>
+              </span>
+            )}
           </div>
         </div>
       </div>

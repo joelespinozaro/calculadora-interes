@@ -24,6 +24,5 @@ public interface BankingMapper {
     List<Banking> toBankings(List<EntidadBancaria> entidadesBancarias);
 
     @InheritInverseConfiguration
-    @Mapping(target = "recomendaciones", ignore = true)
     EntidadBancaria toEntidadBancaria(Banking banking);
 }

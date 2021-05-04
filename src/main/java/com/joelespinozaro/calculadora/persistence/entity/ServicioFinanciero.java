@@ -25,7 +25,9 @@ public class ServicioFinanciero {
 
     private Integer periodo;
 
-    @Formula(value = "CASE WHEN interes=1 THEN capital*power((1 + tasa/100),periodo) WHEN interes=2 THEN capital*(1 + tasa/100) END")
+    private Double interes;
+
+    @Formula(value = "CASE WHEN interes=1 THEN capital+(capital*tasa*periodo/12) WHEN interes=2 THEN capital*power((1 + tasa), periodo/12) END")
     private Double capitalFinal;
 
     @ManyToOne
@@ -51,8 +53,6 @@ public class ServicioFinanciero {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
-
-    private Double interes;
 
 
     public Integer getIdServicioFinanciero() {
