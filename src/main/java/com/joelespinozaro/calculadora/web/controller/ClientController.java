@@ -33,4 +33,9 @@ public class ClientController {
     public boolean delete(@PathVariable("id") int clientId) {
         return  clientService.delete(clientId);
     }
+
+    @GetMapping("/email/{email}")
+    public Optional<Client> getByAddress(@PathVariable("email") String address) {
+        return clientService.getByAddress(address);
+    }
 }

@@ -31,4 +31,7 @@ public class ClientService {
             return true;
         }).orElse(false);
     }
+    public Optional<Client> getByAddress(String address) {
+        return clientRepository.getByAddress(address);
+    }
 }

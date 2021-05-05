@@ -10,4 +10,5 @@ public interface ClientRepository {
     Optional<Client> getClient(int clientId);
     Client save(Client client);
     void delete(int clientId);
+    Optional<Client> getByAddress(String address);
 }

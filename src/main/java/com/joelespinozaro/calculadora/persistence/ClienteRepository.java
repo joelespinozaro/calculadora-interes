@@ -41,5 +41,10 @@ public class ClienteRepository implements ClientRepository {
         clienteCrudRepository.deleteById(clientId);
     }
 
+    @Override
+    public Optional<Client> getByAddress(String address) {
+        return clienteCrudRepository.findByDireccion(address).map(cliente -> mapper.toClient(cliente));
+    }
+
 
 }
